@@ -35,5 +35,13 @@ export const tickers = [
     "MU",
     "INTC",
     "SPY",
-    "WMT"
+    "WMT",
+    "ELYS",
+    "NNDM",
+    "UWMC",
+    "NTWK",
+    "GM",
+    "TSLA",
+    "TAN",
+    "FAN"
 ];
