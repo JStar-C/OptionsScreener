@@ -20,9 +20,8 @@ async function getOptions(symbol) {
     // make API call
     let response = await fetch(`https://api.tdameritrade.com/v1/marketdata/chains?apikey=${API_KEY}&symbol=${symbol}&contractType=CALL&range=OTM&optionType=S`);
     let data = await response.json();
-    console.log(data);
     data = Object.values(data.callExpDateMap);
-    console.log(data);
+
     // loop through weekly options lists
     data.forEach(function(callList) {
         //console.log(callList);
@@ -40,7 +39,6 @@ async function getOptions(symbol) {
             if (ratio < -(DeltaToThetaRatio) && ask < MAX_PRICE && delta > MIN_DELTA)
             {
                 // output data to console
-                console.log(option);
                 console.log(`${name}\n\tTheta:  ${theta.toFixed(3)}          \
                                     \n\tDelta:   ${delta.toFixed(3)}          \
                                     \n\tRatio:   ${Math.abs(ratio).toFixed(3)} \
